@@ -15,7 +15,6 @@ describe("kucocoin", async function () {
 	});
 	
   it("Should do sometings", async function () {
-		
     console.log(await owner.getAddress());
     let balance = await kucoin.getBalance();
     console.log(balance);

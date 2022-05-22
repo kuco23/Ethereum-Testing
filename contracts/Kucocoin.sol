@@ -10,7 +10,7 @@ contract Kucocoin {
     mapping(address => uint256) coins;
 
     constructor() { 
-        users.push(payable(0x0));
+        users.push(address(0));
         addMember();
         coins[msg.sender] += supply;
     }

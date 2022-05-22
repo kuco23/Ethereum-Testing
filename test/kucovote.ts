@@ -34,11 +34,9 @@ describe("kucovote", async function () {
     let request = 'I sent 10BTC from addr 0x0 to 0x0';
     let reqpromise = kucovote.request(request);
     
-    expect(reqpromise)
-      .to.emit(kucovote, "NewRequest") 
-      .withArgs(owner.address, request);
+    await expect(reqpromise).to.emit(kucovote, "NewRequest").withArgs(owner.address, request);
 
-    increaseTime(3 * hour);
+    increaseTime(2 * hour);
 
     let BTCTX = '10BTC was sent from addr 0x0 to addr 0x0 at time t';
     let random = web3.utils.keccak256(randomInt(1000).toString());
@@ -50,7 +48,7 @@ describe("kucovote", async function () {
     await kucovote.vote(merklehash, randomhash);
     let voteid: number = await kucovote.getVoteIndex();
 
-    increaseTime(2 * hour);
+    increaseTime(hour);
 
     await kucovote.reveal(voteid, merkle, random);
 
@@ -60,4 +58,13 @@ describe("kucovote", async function () {
     expect(merkle == winninghash);
 
   });
+
+  it.only("Should calculate the root", async function() {
+    let a = 10;
+    let r = 3; 
+    let m = await kucovote.nthRoot(a, r, 3, 5);
+
+    console.log(m / 10e9);
+  })
+  
 });

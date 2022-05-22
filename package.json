@@ -15,10 +15,6 @@
     "@nomiclabs/hardhat-web3": "^2.0.0",
     "@openzeppelin/hardhat-upgrades": "^1.17.0",
     "@openzeppelin/test-helpers": "^0.5.15",
-    "@typechain/ethers-v5": "7.0.0",
-    "@typechain/hardhat": "2.0.1",
-    "@typechain/truffle-v5": "5.0.0",
-    "@typechain/web3-v1": "3.0.0",
     "@types/chai": "4.2.18",
     "@types/mocha": "^9.1.1",
     "@types/node": "15.12.1",
@@ -28,7 +24,6 @@
     "hardhat": "^2.9.3",
     "ts-node": "^10.7.0",
     "tsc": "^2.0.4",
-    "typechain": "^8.0.0",
     "web3": "^1.7.3"
   },
   "dependencies": {
